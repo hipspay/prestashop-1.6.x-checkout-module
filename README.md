@@ -1,8 +1,8 @@
 # PrestaShop 1.6.x Checkout setup instructions
 
-1. Download our PrestaShop 1.6.x Checkout module [here](https://static.hips.com/plugins/prestashop/HIPS_PS_1.6.x_Checkout1.0.3.zip).
+1. Download our latest PrestaShop 1.6.x Checkout module [here](https://github.com/hipspay/prestashop-checkout-module/releases).
 2. Login to admin and go to Modules and Services.
-3. Press the Add a new module in the top right corner and upload [HIPS.PS.1.6.x.Checkout.zip](https://static.hips.com/plugins/prestashop/HIPS_PS_1.6.x_Checkout1.0.3.zip). 
+3. Press the Add a new module in the top right corner and upload [HIPS.PS.1.6.x.Checkout.zip](https://github.com/hipspay/prestashop-checkout-module/releases). 
 4. Go to Modules and Services → Modules and Services → Payments and Gateways.  
 5. Install Hips Checkout.
 6. Press the Configure button.
