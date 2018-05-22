@@ -1,3 +1,5 @@
+<p align="center"><img src="https://hips.com/logo.svg"></p>
+
 # PrestaShop 1.6.x Checkout setup instructions
 
 1. Download our latest PrestaShop 1.6.x Checkout module [here](https://github.com/hipspay/prestashop-checkout-module/releases).
