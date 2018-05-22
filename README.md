@@ -1,4 +1,4 @@
-#PrestaShop 1.6.x Checkout setup instructions
+# PrestaShop 1.6.x Checkout setup instructions
 
 1. Download our PrestaShop 1.6.x Checkout module [here](https://static.hips.com/plugins/prestashop/HIPS_PS_1.6.x_Checkout1.0.3.zip).
 2. Login to admin and go to Modules and Services.
