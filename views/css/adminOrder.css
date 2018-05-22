@@ -1,0 +1,50 @@
+/*
+ * 2008 - 2017 Presto-Changeo
+ *
+ * MODULE Authorize.net (AIM / DPM)
+ *
+ * @version   1.8.0
+ * @author    Presto-Changeo <info@presto-changeo.com>
+ * @link      http://www.presto-changeo.com
+ * @copyright Copyright (c) permanent, Presto-Changeo
+ * @license   Addons PrestaShop license limitation
+ *
+ * NOTICE OF LICENSE
+ *
+ * Don't use this module on several shops. The license provided by PrestaShop Addons 
+ * for all its modules is valid only once for a single shop.
+ */
+
+#refund_order_details .submit_button, #capture_order_details .submit_button {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+    background-color: #22a7f0;
+    padding: 10px 25px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-width: 0px;
+}
+  
+#refund_order_details .left_column, #capture_order_details .left_column {
+    width: 30%;
+    float: left;
+    text-align: right;
+    margin-right: 3%;    
+    min-height: 30px;
+    margin-bottom: 30px;
+}
+#refund_order_details .right_column, #capture_order_details .right_column {
+    width: 64%;
+    float: right;
+    text-align: left;
+    margin-left: 3%;
+    clear: right;    
+    min-height: 30px;
+    margin-bottom: 30px;
+}
+#refund_order_details .clear, #capture_order_details .clear {
+    clear: both;
+}

@@ -1,0 +1,1267 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 8, 2016, 1:58:54 PM
+    Author     : Cristina
+*/
+@font-face {
+    font-family: 'Oswald-Bold';
+    src: url('../fonts/Oswald-Bold.ttf');
+    src: url('../fonts/Oswald-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald-Light';
+    src: url('../fonts/Oswald-Light.ttf');
+    src: url('../fonts/Oswald-Light.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Oswald-Regular';
+    src: url('../fonts/Oswald-Regular.ttf');
+    src: url('../fonts/Oswald-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans-Regular.ttf');
+    src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans-Semibold';
+    src: url('../fonts/OpenSans-Semibold.ttf');
+    src: url('../fonts/OpenSans-Semibold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OpenSans-Bold';
+    src: url('../fonts/OpenSans-Bold.ttf');
+    src: url('../fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Global Styles */
+body {
+    font-family: OpenSans-Regular, Helvetica,Verdana, Arial, Sans-Serif;
+    color: #34495e;
+    font-size: 13px;
+}
+.showBlock {
+    display: block;
+}
+
+.hideBlock {
+    display: none;
+}
+.clear {
+    clear: both;
+}
+#container.bootstrap {
+    padding: 100px 0px 0;
+}
+/* End - Global Styles */
+
+
+#container .panel {
+    float: left;
+    width: 66%;
+    margin-left: 1%;
+    margin-right: 3%;
+    margin-top: 30px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    padding: 35px;
+}
+
+/* Block Header - including Top Menu & Left Menu style */
+#module_top {
+    background-color: #fff;
+    border-bottom: 1px solid #d7dbde;
+    padding-left: 40px;
+    padding-top: 40px;
+    padding-right: 40px;
+}
+.module_name_presto {
+    font-family: Oswald-Bold;
+    font-size: 30px;
+    float: left;
+    width: 40%;
+}
+.module_version {
+    font-family: Oswald-Regular;
+    font-size: 24px;    
+    margin-left: 10px;
+}
+.module_upgrade {
+    font-family: OpenSans-Regular;
+    font-size: 14px;    
+    margin-top: 15px;
+}
+.module_upgrade a, .module_upgrade a:visited {
+    color: #7ec54c;
+}
+.module_upgrade a:hover, .module_upgrade a:focus {
+    color: #9dd387;
+    text-decoration: none;
+}
+.request_upgrade a, .request_upgrade a,
+.contact_us a, .contact_us a {
+    color: #34495e;
+    text-decoration: none;    
+    padding-left: 63px;
+    padding-top: 13px;
+    padding-bottom: 13px;    
+    line-height: 43px;
+}
+.request_upgrade a:hover, .request_upgrade a:focus,
+.contact_us a:hover, .contact_us a:focus {
+    color: #34495e;
+    text-decoration: none;
+}
+.request_upgrade, .contact_us {
+    font-family: OpenSans-Semibold;
+    font-size: 14px;
+    float: left;
+    margin-right: 2%;
+    width: 20%;
+}
+.request_upgrade a {
+    background: url(../img/upgrade_request_icon.png) no-repeat top left;
+    
+}
+.contact_us a {
+    background: url(../img/contact_us_icon.png) no-repeat top left;
+    
+}
+.presto_logo {
+    width: 10%;
+    float: right
+}
+#main_menu {
+    margin-top: 40px;
+}
+.menu_item {
+    float: left;
+    font-family: Oswald-Bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-right: 5%;
+    height: 30px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+.menu_item.selected {
+    border-bottom: 4px solid #86d151;
+}
+
+#secondary_menu {
+    margin-left: 40px;
+    border: 1px solid #d7dbde;    
+    border-bottom: 0px solid white;
+    margin-top: 30px;        
+}
+
+#secondary_menu .menu_header, #secondary_menu .secondary_menu_item{
+    font-family: OpenSans-Bold;
+    font-size: 14px;
+    font-weight: bold;
+    color: #34495e;
+    height: 60px;
+    line-height: 60px;
+    background-color: #fff;
+    border-bottom: 1px solid #d7dbde;    
+    border-left: 4px solid transparent;
+    padding: 0% 15%;
+    position: relative;
+    cursor: pointer;
+}
+#secondary_menu .menu_header {
+    text-transform: uppercase;
+}
+
+#secondary_menu .menu_header span.arrow_up,
+span.arrow_up{
+    background: url(../img/arrow_up.png) no-repeat top left;
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    right: 10%;
+    top: 25px;
+}
+
+#secondary_menu .menu_header span.arrow_down,
+span.arrow_down{
+    background: url(../img/arrow_down.png) no-repeat top left;
+    width: 15px;
+    height: 10px;
+    position: absolute;
+    right: 10%;
+    top: 25px;
+}
+span.arrow_up, span.arrow_down{
+    top: 5px;
+}
+#secondary_menu .secondary_menu_item{
+     font-family: OpenSans-SemiBold;
+}
+#secondary_menu .secondary_menu_item.menu_header {
+    font-family: OpenSans-Bold;
+}
+#secondary_menu .secondary_menu_item.selected{
+    background-color: transparent;
+    border-left: 4px solid #86d151;
+}
+
+
+.instructions .instructions_block{
+    margin-left: 40px;
+    border: 1px solid #d7dbde;
+    margin-top: 15px;
+    background-color: #fff;
+    font-family: OpenSans-Regular;
+    font-size: 13px;
+    color: #34495e;
+}
+
+.instructions .instructions_block .instructions_title{
+    font-family: OpenSans-SemiBold;
+    font-size: 21px;
+    border-bottom: 1px solid #d7dbde;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    padding-left: 70px;
+}
+.instructions .instructions_block .instructions_content {
+    margin-top: 10px;
+    margin-bottom: 40px;
+}
+.instructions .instructions_block .instructions_title .icon{    
+    background: url(../img/instructions_icon.png) no-repeat top left;
+    width: 43px;
+    height: 43px;
+    position: absolute;
+    left: 10px;
+    top: 8px;
+}
+.instructions .instructions_block .instructions_line .icon{
+    background: url(../img/instructions_normal_icon.png) no-repeat top left;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 40px;
+    top: 27px;
+}
+.instructions .instructions_block .instructions_line{
+    padding: 25px 7% 0px 60px;
+    position: relative;
+}
+.instructions .instructions_block .instructions_important{
+    color: #d2527f;
+}
+
+.instructions .instructions_block .instructions_important .icon{
+    background: url(../img/instructions_important_icon.png) no-repeat top left;
+    width: 16px;
+    height: 16px;
+}
+.contact_form_left_menu {
+    margin-top: 15px;
+    margin-left: 40px;
+    background-color: #fef9e6;
+    border: 1px solid #d7dbde;
+    padding: 35px 25px;
+    text-align: center;
+}
+.contact_form_left_menu .contact_form_text {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    line-height: 22px;
+    margin: 0px 20%;
+    padding-bottom: 20px;
+}
+.contact_form_left_menu .contact_button {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+    background-color: #22a7f0;
+    padding: 10px 25px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.contact_form_left_menu .contact_button:hover, .contact_form_left_menu .contact_button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* module_recommandations */
+
+.module_recommandations_bottom {
+    display: none;
+}
+#module_recommandations {
+    margin-left: 40px;
+    border: 1px solid #d7dbde;    
+    margin-top: 15px;  
+    background-color: #fff;
+}
+
+#module_recommandations .module_recommandations_block .module_recommandations_title {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    border-bottom: 1px solid #d7dbde;
+    height: 60px;
+    line-height: 60px;
+    position: relative;
+    padding-left: 25px;
+    text-transform: uppercase;
+}
+
+#module_recommandations .module_recommandations_blocku .recommandations_buy:hover, #module_recommandations .module_recommandations_block .recommandations_buy:focus {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+    background-color: #22a7f0;
+    padding: 10px 25px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+#module_recommandations .module_recommandations_blocku .recommandations_buy:hover, #module_recommandations .module_recommandations_block .recommandations_buy:focus {
+    color: #fff;
+    text-decoration: none;
+}
+.module_recommandations_block_content {
+    width: 50%;
+    float: left;
+    border-right: 1px solid #d7dbde;
+    border-bottom: 1px solid #d7dbde;
+    min-height: 110px;
+    padding: 3%;
+}
+#module_recommandations .no_right_border{
+    border-right: 0px solid #d7dbde;
+}
+
+#module_recommandations .no_bottom_border{
+    border-bottom: 0px solid #d7dbde;
+}
+
+#module_recommandations .recommandations_product_name a:hover,
+#module_recommandations .recommandations_product_name a:focus{
+    color: #34495e;
+    text-decoration: none;
+}
+
+#module_recommandations  .recommandations_product_buy {
+    float: right;
+    width: 45%;
+}
+
+#module_recommandations .recommandations_product_name a {
+    color: #34495e;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: OpenSans-SemiBold;
+    float: left;
+}
+
+#module_recommandations  .recommandations_buy_block .recommandations_price{
+    color: #34495e;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: OpenSans-SemiBold;
+    float: left;
+}
+#module_recommandations  .recommandations_buy_block .recommandations_buy a:hover,
+#module_recommandations  .recommandations_buy_block .recommandations_buy a:focus{
+    color: #fff;
+    text-decoration: none;
+}
+#module_recommandations  .recommandations_buy_block .recommandations_buy a{
+    font-family: OpenSans-SemiBold;
+    font-size: 13px;
+    line-height: 12px;
+    color: #fff;
+    background-color: #22a7f0;
+    padding: 2px 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 5px;
+}
+
+#module_recommandations .recommandations_product_name {
+    width: 100%;
+    min-height: 70px;
+}
+#module_recommandations  .recommandations_buy{
+    float: right;
+}
+
+#module_recommandations  .recommandations_product_image {
+    float: left;
+}
+/* End module_recommandations */
+#left_menu {
+    float: left;
+    width: 30%;
+}
+
+
+#module_upgrade , .info_popup {
+    display: none;
+}
+#module_upgrade .panel ,.info_popup .panel {    
+    margin-left: 0px;
+    width: 100%;
+    float: none;    
+    max-width: 650px;
+    margin-top: 0px;
+}
+#module_upgrade .panel h3, .info_popup .panel h3 {
+    background-color: #22a7f0;
+    margin-top: 0px;
+    color: #fff;
+    font-family: OpenSans-SemiBold;
+    font-size: 21px;    
+    padding: 25px;    
+    margin-bottom: 0px;    
+    line-height: 44px;
+}
+
+#module_upgrade .upgrade_check_content, .info_popup .upgrade_check_content  {
+    padding: 30px;
+    text-align: center;
+    max-width: 450px;
+    margin: 0 auto;
+    color: #34495e;
+    font-size: 14px;
+    font-family: OpenSans-SemiBold;
+}
+.info_popup .upgrade_check_content  {
+    text-align: left;
+    color: #606060;
+    font-size: 13px;
+}
+
+#module_upgrade .upgrade_check_content a,
+#module_upgrade .upgrade_check_content a:hover, 
+#module_upgrade .upgrade_check_content a:focus {
+    color: #67809f;
+    text-decoration: none;
+}
+
+#module_upgrade .upgrade_check_content a.upgrade_now_btn {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+    background-color: #22a7f0;
+    padding: 10px 25px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+#module_upgrade .upgrade_check_content a.upgrade_now_btn:hover,
+#module_upgrade .upgrade_check_content a.upgrade_now_btn:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+#module_upgrade  .upgrade_check_icon {
+    background: url(../img/upgrade_check_btn.png) no-repeat top left;
+    padding: 22px 22px;
+    float: right;
+}
+
+.info_popup  .info_icon {
+    background: url(../img/info_btn.png) no-repeat top left;
+    padding: 22px 22px;
+    float: right;
+}
+
+/* Content panel style */
+#content.bootstrap .panel, #container .panel {
+    float: left;
+    width: 60%;
+    margin-left: 1%;
+    margin-right: 3%;
+    margin-top: 30px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    padding: 35px;
+}
+
+#container .panel{
+	position: relative;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #d7dbde;
+    background-color: #fff;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#container .panel{
+    margin-bottom: 17px;
+    background-color: #fff;
+    border: 1px solid #d7dbde;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.panel_header {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e5e8ea;
+    margin-bottom: 30px;
+}
+.panel_header .panel_title{
+    font-family: OpenSans-SemiBold;
+    font-size: 21px;
+    width: 40%;
+    float: left;    
+    line-height: 21px;
+}
+
+.panel_header .panel_info_text{
+    font-family: OpenSans-SemiBold;
+    font-size: 13px;
+    width: 60%;
+    float: right;
+    line-height: 21px;
+}
+.two_columns .left_column {
+    width: 25%;
+    float: left;
+    text-align: right;
+    margin-right: 3%;    
+    min-height: 30px;
+    margin-bottom: 30px;
+}
+.two_columns .right_column {
+    width: 64%;
+    float: right;
+    text-align: left;
+    margin-left: 3%;
+    clear: right;    
+    min-height: 30px;
+    margin-bottom: 30px;
+}
+.simple_alert {
+    background: url(../img/simple_alert_icon.png) no-repeat top left;
+    padding: 0px 10px;
+}
+.important_alert {
+    background: url(../img/important_alert_icon.png) no-repeat top left;
+    padding: 0px 10px;
+}
+.info_alert {
+    background: url(../img/info_alert_icon.png) no-repeat top right;
+    padding: 0px 10px 0px 18px;
+}
+.important{
+    color: #db0a5b !important;
+}
+.hideADN {
+    display: none;
+}
+.submit_button {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    line-height: 22px;
+    color: #fff;
+    background-color: #22a7f0;
+    padding: 10px 25px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-width: 0px;
+}
+.spacing_bottom {
+    margin-bottom: 30px;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    margin: 0px;
+    background-color: #b3bfcf;
+    height: 40px;
+    width: 200px;
+    line-height: 40px;
+    float: left;
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    height: 100%;
+    text-align: center;
+}
+#uploadFile{
+    border: none;
+    margin-left: 10px; 
+    width: 200px;
+    border: none;
+    margin-left: 10px;
+    width: 200px;
+    background: transparent;
+    font-size: 13px;
+    font-family: OpenSans-Regular;
+    color: #34495e;
+    line-height: 40px;
+}
+
+/* End - Block Header - including Top Menu & Left Menu Style */
+
+/* Instructions */
+.general_instructions .instructions_title, .instructions_title, .override_block, .hook_title , .hook_content,
+.special_instructions_header, .special_instructions_content, .extra_instructions{
+    padding-left: 60px;
+}
+.general_instructions .instructions_title {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e8ea;
+}
+.general_instructions .general_instructions_content,
+.hook_instructions .hook_content,
+.special_instructions .special_instructions_content {
+    border-bottom: 1px solid #e5e8ea;
+    padding-left: 35px;    
+    padding-bottom: 35px;
+}
+.hook_instructions .hook_content,
+.special_instructions .special_instructions_content {
+    border-bottom: 0px solid #e5e8ea;
+}
+.general_instructions .general_instructions_content ul li,
+.hook_instructions .hook_content ul li,
+.special_instructions .special_instructions_content ul li{
+    padding-top: 30px;
+    color: #b3bfcf;
+}
+.general_instructions .general_instructions_content ul li span,
+.hook_instructions .hook_content ul li span,
+.special_instructions .special_instructions_content ul li span{
+    color: #34495e;
+}
+
+.general_instructions .general_instructions_content ul li.notes,
+.general_instructions .general_instructions_content ul li span.notes,
+.hook_instructions .hook_content ul li.notes,
+.hook_instructions .hook_content ul li span.notes,
+.special_instructions .special_instructions_content ul li span.notes{
+    color: #1ba39c;
+}
+
+.special_instructions .special_instructions_header a {
+    color: #34495e;
+    text-decoration: underline;
+}
+
+.special_instructions .special_instructions_content a,
+.panel a{
+    color: #67809f;
+}
+.special_instructions .special_instructions_content a:hover,
+.special_instructions .special_instructions_content a:focus,
+.panel a:hover, .panel a:focus{
+    text-decoration: none;
+    color: #67809f;
+}
+/* Override instructions */
+.override_instructions {
+    background-color: #f6fcf3;
+    margin-bottom: 60px;
+}
+
+.override_instructions .instructions_title {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e8ea;
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+}
+.override_instructions .instructions_title a{
+    position: relative;    
+    float: right;
+    margin-right: 5%;
+}
+.override_instructions  .override_content {
+    padding-bottom: 30px;    
+    padding-top: 20px;
+}
+.override_instructions .override_class {
+    font-family: OpenSans-SemiBold;
+    
+}
+.override_instructions .file_installed {
+    color: #67a939;
+}
+.override_instructions .file_not_installed {
+    color: #db0a5b;
+}
+
+.override_instructions .override_block {
+    padding-top: 20px;
+}
+.override_instructions .last_block_margin{
+    margin-bottom: 15px;
+}
+.override_instructions .extra_instructions {
+    padding-top: 20px;
+}
+
+.extra_line {
+    border-bottom: 1px solid #e5e8ea;
+}
+
+/* Extra HOOK instructions */
+.hook_instructions  .panel_header .panel_title.hook_title {
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+    width: 40%;
+    float: left;
+    line-height: 14px;
+}
+.hook_instructions  .panel_header .panel_info_text {
+    line-height: 14px;
+    font-family: OpenSans-Regular;
+    font-size: 13px;
+}
+.hook_instructions .panel_header{
+    padding-top: 30px;    
+    margin-bottom: 0px;
+}
+
+/* Special Instructions */
+.special_instructions .special_instructions_header {
+    background-color: #fef9e6;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    border-left: 4px solid #e9d460;
+    font-family: OpenSans-SemiBold;
+    font-size: 14px;
+}
+/* End - Instructions */
+
+/* Advanced Configuration */
+.table_format .row_format {
+    clear: right;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e8ea;
+}
+
+.table_format .row_format .column_format {
+    width: 23%;
+    float: left;
+    min-height: 20px;    
+    font-family: OpenSans-SemiBold;
+    padding-right: 4%;
+}
+.table_format .row_format .column_format.column_1,
+.table_format .row_format .column_format.column_6{
+    width: 4%;   
+}
+.table_format .row_format .column_format.column_6{
+    padding-right: 0%;
+}
+.bootstrap .presto-switch {
+    display: block;
+    height: 18px;
+    position: relative;
+}
+
+.bootstrap .presto-switch {
+    margin-top: 3px;
+    background-color: #86d151;
+    border-radius: 10px;
+    color: #333;
+    text-align: center;
+    -webkit-box-shadow: rgba(0,0,0,0.15) 0 1px 4px 1px inset;
+    box-shadow: rgba(0,0,0,0.15) 0 1px 4px 1px inset;
+}
+
+
+.bootstrap .presto-fixed-width-lg {
+    width: 35px !important;
+}
+
+.bootstrap .presto-switch a {
+    border: solid 1px #a1a5a9;
+    background-color: #fff;
+    -webkit-box-shadow: "#1B7088" 0 -1px 0 inset;
+    box-shadow: "#1B7088" 0 -1px 0 inset;
+}
+
+.bootstrap .presto-switch .btn{
+    border-radius: 10px;    
+    width: 60%;
+}
+.bootstrap .presto-switch input:last-of-type:checked ~ a {
+    border: solid 1px #a1a5a9;
+    background-color: #fff;
+    left: 40%;
+}
+
+.switch_block .switch_label ,
+.bootstrap .presto-fixed-width-lg {
+    float: left;    
+    margin-right: 10px;
+}
+
+.expand_all {    
+    float: right;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+.expand_all span.arrow_up, .expand_all span.arrow_down {
+    top: 40px;
+    right: 40px;
+}
+
+.table_format .expand_collapse {
+    position: relative;
+}
+#advanced_settings .panel_header {
+    padding-bottom: 20px;
+    border-bottom: 0px solid #e5e8ea;
+    margin-bottom: 30px;
+}
+#advanced_settings .table_format .row_header {
+    background-color: #f5f8f8;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e5e8ea;
+    border-top: 1px solid #e5e8ea;
+}
+
+#advanced_settings .fixed_height {
+    /*margin-bottom: 40px;*/
+    height: 30px;
+}
+#advanced_settings .fixed_empty_height {
+    height: 40px;
+}
+#advanced_settings textarea {
+    height: 60px;
+}
+
+#advanced_settings .switch_block {
+    margin-top: 15px;
+}
+
+#advanced_settings .panel_header .switch_block {
+    margin-top: 0px;
+}
+
+#advanced_settings .two_columns .right_column {
+    width: 45%;    
+    font-family: OpenSans-Regular;
+}
+#advanced_settings .two_columns .right_column input[type=text]{    
+    width: 50%;
+    display: inline;
+}
+
+#advanced_settings .two_columns .right_column input[type=radio],
+#advanced_settings .two_columns .right_column input[type=checkbox]{
+    width: auto;    
+    margin-top: 8px;
+}
+#advanced_settings .two_columns .left_column {
+    width: 49%;  
+    margin-top: 5px;
+}
+
+#advanced_settings .display_more {
+    
+}
+.table_format.table_compact .row_format {
+    clear: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #fff;
+    background-color: #f5f8f8;
+}
+
+.table_format.table_compact .row_format .column_format.column_1 {
+    width: 20%;
+}
+.table_format.table_compact .row_format .column_format.column_2 {
+    width: 70%;
+}
+
+.table_format .row_format .column_format.column_5 {    
+    padding-right: 0px;
+}
+.display_more, .hide_more {
+    cursor: pointer;
+}
+.hide_more {
+    display: none;
+}
+.more_arrow_down , .more_arrow_up{
+    background: url(../img/more_arrow_down.png) no-repeat top left;
+    padding: 5px 5px;
+    float: right;
+    padding-top: 10px;
+    margin-top: 9px;
+}
+.more_arrow_up{
+    background: url(../img/more_arrow_up.png) no-repeat top left;
+}
+
+.bootstrap input.edit_btn,
+.bootstrap input.delete_btn,
+.bootstrap input.upload_btn{
+    border: 0px solid #fff;
+    background-color: transparent;
+    color: #67809f;
+    font-family: OpenSans-Regular;
+    font-size: 13px;
+    
+    background: url(../img/edit_icon.png) no-repeat top left;
+    padding-left: 16px;
+    line-height: 16px;
+}
+.bootstrap input.delete_btn {    
+    background: url(../img/delete_icon.png) no-repeat top left;
+}
+
+.bootstrap input.upload_btn{    
+    background: url(../img/upload_icon.png) no-repeat top left;    
+    padding-left: 20px;
+    line-height: 16px;
+}
+/* End - Advanced Configuration */
+
+/*Responsive Design*/
+
+@media screen and (max-width: 1600px) {
+    #module_recommandations  .recommandations_product_buy{
+        float: none;
+        width: 100%;        
+        clear: both;
+    }
+
+    .module_recommandations_block_content {
+        
+        min-height: 220px;
+        padding: 6%;
+    }
+    #module_recommandations .recommandations_product_image {
+        float: none;
+        clear: both;
+    }
+    #module_recommandations .recommandations_product_name {
+        margin-top: 10px;
+    }
+}
+
+@media screen  and (min-width: 769px)  and (max-width: 1300px) {
+    
+    .presto_logo {
+        width: 20%;
+        float: right;
+    }
+    
+    .module_name_presto {
+        width: 45%;
+        margin-right: 5%;
+    }
+    .request_upgrade {
+        width: 47%;
+        margin-bottom: 10px;
+    }
+    .contact_us {
+        width: 29%;
+        margin-right: 0%;
+    }
+
+    #secondary_menu,
+    .instructions .instructions_block,
+    #module_recommandations,
+    .contact_form_left_menu{
+        margin-left: 5px;
+    }
+    .contact_form_left_menu {
+        padding: 35px 15px;
+    }
+    .contact_form_left_menu .contact_form_text {
+        margin: 0px 5%;
+    }
+    .contact_form_left_menu .contact_button {
+        padding: 10px 15px;
+    }
+    #secondary_menu .menu_header, #secondary_menu .secondary_menu_item {
+        padding: 0% 5%;
+    }
+    #secondary_menu .menu_header {
+        line-height: 20px;
+        padding-top: 10px;
+    }
+    #secondary_menu .menu_header span.menu_header_text{
+        width: 140px;
+        display: inline-block;
+    }
+    
+    .instructions .instructions_block .instructions_title {
+        font-size: 16px;
+        padding-left: 60px;
+    }
+    
+    .instructions .instructions_block .instructions_line {
+        padding: 25px 7% 0px 30px;
+        position: relative;
+    }
+    .instructions .instructions_block .instructions_line .icon {
+        left: 10px;
+    }
+    #module_recommandations .module_recommandations_block .module_recommandations_title {
+        padding-left: 10px;
+    }
+    #module_recommandations .module_recommandations_block .module_recommandations_title {
+        font-size: 12px;
+    }
+    .module_recommandations_block_content {
+        width: 100%;
+        float: left;
+        border-right: 0px solid #d7dbde;
+    }
+    #module_recommandations .no_bottom_border {
+        border-bottom: 1px solid #d7dbde;
+    }
+    #module_recommandations .recommandations_product_image {
+        text-align: center;
+    }
+    #module_recommandations .recommandations_product_name {
+        min-height: 30px;
+    }
+    .module_recommandations_block_content {
+        min-height: 100px;
+    }
+    
+    .general_instructions .instructions_title, .instructions_title, .override_block, .hook_title, .hook_content, .special_instructions_header, .special_instructions_content, .extra_instructions {
+        padding-left: 30px;
+    }
+    .general_instructions .general_instructions_content, .hook_instructions .hook_content, .special_instructions .special_instructions_content {
+
+        padding-left: 0px;
+    }
+    
+    .panel_header .panel_info_text {
+        width: 100%;
+    }
+    .panel_header .panel_title {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    #advanced_settings .panel_header .switch_block {
+        margin-top: 0px;
+        width: 100%;
+        float: none;
+        height: 25px;
+    }
+    .expand_all span.arrow_up, .expand_all span.arrow_down {
+        top: 97px;
+    }
+}
+@media screen and (max-width: 1300px) {
+    .table_format .row_format .column_format {
+        width: 100%;
+    }
+    
+    .table_format .row_format .column_format.column_1{
+        width: 8%;
+        float: left;
+        margin-right: 2%;
+    }
+    .table_format .row_format .column_format.column_2{ 
+        width: 90%;
+        float: left;  
+    }
+    .table_format .row_format .column_format.column_6 {
+        width: 100%;
+    }
+    .table_format .expand_collapse {
+        float: right;
+    }
+    .table_format .row_format .column_format.column_3,
+    .table_format .row_format .column_format.column_4,
+    .table_format .row_format .column_format.column_5{
+        width: 90%;
+        margin-left: 10%;
+    }
+    #advanced_settings .table_format .row_header {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .table_format .row_format .column_format.header_column.column_6 {
+        width: 0%;
+    }
+    #advanced_settings .fixed_height {
+        margin-bottom: 10px;
+        height: auto;
+    }
+    #advanced_settings .fixed_empty_height {
+        height: 0px;
+    }
+    
+}
+@media screen and (max-width: 768px) {
+    #left_menu {
+        float: none;
+        width: 90%;
+    }
+    module_name_presto {
+        width: 100%;
+    }
+    .request_upgrade, .contact_us {
+         width: 100%;       
+         margin-bottom: 10px;
+    }
+    .presto_logo {
+        width: 100%;
+        float: left;
+    }
+    .module_name_presto {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .module_recommandations_top {
+        display: none;
+    }
+
+    .module_recommandations_bottom {
+        display: block;
+        width: 90%;
+    }
+    
+    
+
+    #module_recommandations .recommandations_product_image {
+        text-align: center;
+    }
+    #module_recommandations .recommandations_product_name a {
+        float: none;
+        text-align: center;
+    }
+    #module_recommandations .recommandations_product_name {
+        text-align: center;
+        min-height: 40px;
+    }
+    .module_recommandations_block_content {
+        min-height: 210px;
+    }
+    #content.bootstrap .panel {
+        float: none;
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #secondary_menu .menu_header, #secondary_menu .secondary_menu_item {
+        font-size: 12px;
+    }
+    .panel_header .panel_info_text {
+        width: 100%;
+    }
+    .expand_all span.arrow_up, .expand_all span.arrow_down {
+        top: 97px;
+    }
+    .switch_block .switch_label, .bootstrap .presto-fixed-width-lg {
+        font-size: 10px;
+    }
+    .panel_header .panel_title {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    #advanced_settings .panel_header .switch_block {
+        margin-top: 0px;
+        width: 100%;
+        float: none;
+        height: 25px;
+    }
+    
+    #module_upgrade .panel h3, .info_popup .panel h3 {
+        font-size: 16px;
+    }
+    #module_upgrade .upgrade_check_content, .info_popup .upgrade_check_content {
+        font-size: 12px;
+    }
+    
+
+    .instructions .instructions_block {
+        font-size: 10px;
+    }
+    .two_columns .left_column,
+    .two_columns .right_column{
+        margin-bottom: 5px;
+    }
+    .two_columns .left_column {
+        width: 35%;
+    }
+    .two_columns .right_column {
+        width: 59%;
+    }
+    .general_instructions .instructions_title, .instructions_title, .override_block, .hook_title, .hook_content, .special_instructions_header, .special_instructions_content, .extra_instructions {
+        padding-left: 10px;
+    }
+
+    .general_instructions .general_instructions_content, .hook_instructions .hook_content, .special_instructions .special_instructions_content {
+        padding-left: 10px;
+    }
+    
+    .bootstrap #installation_instructions ul, .bootstrap #installation_instructions ol,
+    .bootstrap #import_settings ul, .bootstrap #import_settings ol {
+        padding-left: 10px;
+    }
+    
+    .fileUpload {
+        width: 100px;
+    }
+    #uploadFile {
+        width: 100px;
+    }
+    #import_settings .two_columns .left_column {
+        width: 35%;
+    }
+    #import_settings .two_columns .right_column {
+        width: 55%;
+    }
+}

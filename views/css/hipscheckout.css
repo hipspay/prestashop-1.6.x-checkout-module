@@ -1,0 +1,279 @@
+/*
+ * 2008 - 2017 Presto-Changeo
+ *
+ * MODULE Authorize.net (AIM / DPM)
+ *
+ * @version   1.8.0
+ * @author    Presto-Changeo <info@presto-changeo.com>
+ * @link      http://www.presto-changeo.com
+ * @copyright Copyright (c) permanent, Presto-Changeo
+ * @license   Addons PrestaShop license limitation
+ *
+ * NOTICE OF LICENSE
+ *
+ * Don't use this module on several shops. The license provided by PrestaShop Addons 
+ * for all its modules is valid only once for a single shop.
+ */
+
+body#checkout section.checkout-step .payment-options label img {
+    vertical-align: top;
+}
+
+
+.payment_module.pc-eidition
+{
+    border: 1px solid #D6D4D4;
+    border-radius: 4px;
+    color: #333333;
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 23px;
+    padding: 35px;
+    position: relative;
+    font-family: Arial,​Helvetica,​sans-serif;
+    text-transform: none;
+    text-align:left;
+}
+
+.payment_module.pc-eidition .pcpm-ajax-container.error 
+{
+    border:1px solid #f30606;
+    color:#f30606;
+    background:#fbe3e3;
+    font-weight: normal;
+    font-size:14px;
+    line-height:18px;
+    padding:10px;
+    margin:10px 0 25px 0;
+    clear:both;
+}
+
+.payment_module.pc-eidition .pcpm-confirm,
+.payment_module.pc-eidition .pcpm-total {
+    color: #333333;
+    font-weight: normal;
+    font-size:14px;
+    line-height:18px;
+    padding:15px 0 15px 0;	
+}
+
+.payment_module.pc-eidition .pcpm-total .price {
+    font-size:14px;
+    color:#000;
+}
+
+
+
+/* PS 1.6 uniform font family */ 
+.payment_module.pc-eidition div.selector span{
+    font-family: "Arial", "Helvetica";
+    font-weight: normal;
+}
+
+.payment_module.pc-eidition img {
+    float:none;
+}
+
+body#checkout section.checkout-step .payment-options label.label_adn_save_card {
+    display: inline;
+}
+.payment_module.pc-eidition .accept_cards{
+    padding:10px 0 20px 0;
+    margin:0 0 10px 0;
+    border-bottom:1px solid #e7e7e7;
+    line-height:	23px;
+    vertical-align:	baseline;	
+
+}
+.payment_module.pc-eidition  .cart_navigation .button-medium {
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 11px 15px 10px 15px;
+}
+.payment_module.pc-eidition .title_accept {
+    font-size: 24px;
+    line-height:36px;
+    font-weight: normal;
+    color:#333333;
+    text-transform: none;
+    padding:0;
+    margin:0 0 15px 0;
+    background: none;
+}
+
+
+.payment_module.pc-eidition .form_row {
+    padding:5px 0 10px 0;
+}
+
+.payment_module.pc-eidition .form_row .half-row,
+.payment_module.pc-eidition .form_row.half-row 
+{
+    width: 48%;
+}
+
+.payment_module.pc-eidition .form_row.f-l {
+    float:left;
+}
+
+.payment_module.pc-eidition .form_row.f-r {
+    float:right;
+}
+
+
+.payment_module.pc-eidition .form_row label {
+    font-weight: normal;
+    font-size:14px;	
+    line-height: 16px;
+    color: #333333;
+    display: inline-block;
+    margin: 0 0 5px 0;	
+    width:auto;
+    float:none;
+
+}
+
+.payment_module.pc-eidition .form-control, .payment_module.pc-eidition .form-control:before, .payment_module.pc-eidition .form-control:after {
+    -moz-box-sizing: border-box;
+}
+
+.payment_module.pc-eidition .form-control 
+{
+    height:27px;
+    font-weight:100;
+    box-shadow: none;
+    padding: 3px 5px;
+    background-color: #FFFFFF;
+    border: 1px solid #D6D4D4;
+    border-radius: 0;
+    color: #9C9B9B;
+    display: block;
+    font-size: 13px;
+    line-height: 1.42857;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    vertical-align: middle;
+    width: 100%;
+    margin:0; 	
+}
+
+.payment_module.pc-eidition span.form-caption {
+    font-size:12px;	
+    font-weight: normal;	
+}
+
+.payment_module.pc-eidition .cart_navigation,
+#order-opc .payment_module.pc-eidition .cart_navigation {
+
+    margin: 20px 0 0 0;
+    text-align: right;
+
+}
+
+
+
+.payment_module.pc-eidition .clear {
+    clear:both;
+}
+
+.payment_module.pc-eidition .cart_navigation .exclusive_large
+{
+    border-radius:4px;
+    padding: 8px 20px;
+    background: #fdd228 !important;
+    font-family: Arial,​​Helvetica,​​sans-serif;
+    font-size: 16px !important;
+    font-weight: 700;
+    font-style:	normal;
+    height:auto !important;
+    font-size-adjust:	none;
+    color:	#000000 !important;    
+}
+
+.payment_module.pc-eidition a.button_large {
+    float:left;
+    border-radius:4px;
+    background: #fdd228 !important;
+    height:auto !important;
+    font-family: Arial,​​Helvetica,​​sans-serif;
+    font-size:	16px !important;
+    font-weight: 700;
+    font-style:	normal;
+    font-size-adjust:	none;
+    color:	#000000 !important;  
+}
+
+/**
+ * 	Iframe height
+ */
+.pc-iframe-dpn {
+    height:526px;
+}
+
+
+.pc-iframe-dpn.get_address {
+    height:725px;
+
+}
+
+.pc-iframe-dpn.adn_get_cvm {
+    height:615px;
+} 
+
+.pc-iframe-dpn.get_address.adn_get_cvm  {
+    height:811px;
+}
+
+@media (max-width: 530px) {
+    .pc-iframe-dpn {
+        height:660px;
+    }
+
+    .pc-iframe-dpn.adn_get_cvm {
+        height:760px;
+    } 
+
+    .pc-iframe-dpn.get_address {
+        height:1000px;
+    } 
+
+    .pc-iframe-dpn.get_address.adn_get_cvm  {
+        height:1095px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+
+
+    .payment_module.pc-eidition
+    {
+        border: 1px solid #D6D4D4;
+        border-radius: 4px;
+        color: #333333;
+        display: block;
+        font-size: 17px;
+        font-weight: bold;
+        letter-spacing: -1px;
+        line-height: 23px;
+        padding: 33px 20px 34px 20px;
+        position: relative;
+    }
+
+    .payment_module.pc-eidition .form_row.f-l {
+        float:none;
+    }
+
+    .payment_module.pc-eidition .form_row.f-r {
+        float:none;
+    }
+
+    .payment_module.pc-eidition .form_row.half-row {
+        width: 100%;
+    }
+}
+
+

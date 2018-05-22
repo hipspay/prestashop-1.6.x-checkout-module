@@ -1,0 +1,273 @@
+#card_form_id p label {
+    color: #4F2C1D;
+    display: block;
+    font-family: 'Tahoma' ;
+    font-size: 1.09091em;
+    margin-bottom: 0.5em;
+    
+}
+
+
+#card_form_id > h3 {
+    color: #0072CE;
+    font: 1.63636em Raleway-Light;
+    text-transform: uppercase;
+    padding-bottom:2em;
+    margin:0;
+}
+
+.selectBox-dropdown.card.h32 {
+	width:16.182em !important;
+	margin-right:1.750em;
+}
+
+.selectBox-dropdown.card_address.h32 {
+	width:34.636em !important;
+	margin-right:1.750em;
+}
+
+.selectBox-dropdown.card_address.h32 .selectBox-label {
+	width:29em !important;
+}
+
+
+#card_form_id  input[type=text] {
+    -moz-box-sizing: border-box;
+    border: 1px solid #D1C9C6;
+    color: #715459;
+    height: 3.1em;
+    padding: 0 0.83%;
+    width: 34.636em;
+    margin:0;
+}
+
+#card_form_id  p {
+    padding-bottom:1.6em;
+}
+
+#card_form_error_id ul { 
+	list-style-type: none;
+}
+
+#card_form_error_id {
+	margin-bottom:10px;
+}
+
+#module-orbitalpayment-account .full_column_div {
+    background: none repeat scroll 0 0 #F7F7F7;
+}
+
+#cards_container_id .right_block {
+   	position:relative;
+}
+
+#card-loader {
+	background: url("../../../../../themes/palmers/img/palmers_loading_icon_transparent.gif") #FFF no-repeat center center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.7;
+	display: none;
+	width: 100%;
+	height: 100%;
+}
+
+#cards_container_id {
+    float: right;
+    margin-bottom: 5.36364em;
+    width: 67.8723%;
+}
+
+#cards_container_id .payment_header {
+    background: url("../../../../../themes/palmers/img-large/myaccount/payment-header.jpg") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #D1C9C6;
+    color: #FFFFFF;
+    display: block;
+    font-family: "Raleway-Bold",sans-serif;
+    font-size: 2.18182em;
+    height: 4.7083em;
+    line-height: 4.8em;
+    margin-bottom: 0.291666em;
+    padding: 0 0 0 1.2em;
+}
+
+#cards_container_id  .right_block {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #D3CBC8;
+    padding: 2.18182em 2.63636em 3.45455em 2.45455em;
+    position: relative;
+}
+
+.card_button {
+	-webkit-box-shadow: 2px 2px 0px 0px rgba(232,232,232,1);
+	-moz-box-shadow: 2px 2px 0px 0px rgba(232,232,232,1);
+	box-shadow: 2px 2px 0px 0px rgba(232,232,232,1);
+	background:#b8aca8;
+    border: 0 solid #000000;
+    color: #FFFFFF !important;
+    display: block;
+    font-family: 'Raleway';
+    font-size: 1.091em;
+    height: 3.167em;
+    line-height: 3.167em;
+    padding: 0;
+    text-align: center;
+    text-transform: uppercase;
+    cursor:pointer;
+	
+}
+
+.add_new_card.card_button {
+	width:18.833em;
+	margin-bottom:2.083em;
+    -webkit-appearance: none;
+    -webkit-border-radius:0px;  
+}
+
+.card_edit.card_button {
+	width:6.250em;
+	margin-top:0.3em;
+	margin-right:1.333em;
+	display:inline-block;
+    -webkit-appearance: none;
+    -webkit-border-radius:0px;  
+}
+
+.card_remove.card_button {
+	margin-top:0.3em;
+	width:7.333em;
+	display:inline-block;
+    -webkit-appearance: none;
+    -webkit-border-radius:0px;  
+}
+
+#card_save.card_button {
+	display:inline-block;
+	margin-right:1.273em;
+	width:6.250em;
+    -webkit-appearance: none;
+    -webkit-border-radius:0px;  
+} 
+
+#card_cancel.card_button {
+	display:inline-block;
+	width:6.250em;
+    -webkit-appearance: none;
+    -webkit-border-radius:0px;  
+} 
+
+.card_item {
+	background:#f7f7f7;
+	padding:1.583em 2em 1.833em 2.750em;
+	width:40em;
+}
+
+.card_info {
+	float:left;
+    font-family: Tahoma;
+    font-size: 1.091em;
+    color:#4f2c1d;
+    line-height: 1.536em;
+    width: 20.833em;
+}
+
+.card_info .card_item_title {
+	font-weight:bold;
+}
+
+.card_info .card_item_date {
+	color:#957f83;
+}
+
+.card_info .card_item_date span{
+	color:#4f2c1d;
+}
+
+.card_form {
+	padding:1.727em;
+	background:#f7f7f7;
+	margin-bottom: 1em;
+}
+
+.container_card_item {
+	padding-bottom:1em;	
+}
+@media only screen and (max-width: 939px){
+    #cards_container_id .payment_header{display: none;}
+    #cards_container_id{
+        float: none;
+        width: 96.35%;
+        margin: 0 1.82% 5.36364em 1.82%;
+    }
+    #cards_container_id .right_block{
+        padding: 1.818181em 0.545454em 3.45455em 0.545454em;
+    }
+    #card_form_id input[type=text]{
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .selectBox-dropdown.card.h32{
+        width: 47.84% !important;
+        margin-right: 3.273809%;
+    }
+    .selectBox-dropdown.card.h32.no_margin{
+        margin-right: 0;
+    }
+    
+	.selectBox-dropdown.card_address.h32 {
+		width:100% !important;
+		margin-right:1.750em;
+	}
+	.selectBox-dropdown.card_address.h32 .selectBox-label {
+		width:90% !important;
+	}    
+    
+    .add_new_card.card_button{
+        margin-bottom: 1.181818em;
+    }
+    #module-orbitalpayment-account #center_column > h1{
+        margin-left: 1.82%;
+    }
+    #module-orbitalpayment-account .full_column_div {
+        border-top: 1px solid #D1C9C6;
+    }
+}
+@media only screen and (max-width: 767px){
+    #cards_container_id{
+        margin: 0 auto 5.36364em auto;
+        width: 93.125%;
+    }
+    .card_item{
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+    .add_new_card.card_button{
+        margin-left: 1.545454em;
+        margin-bottom: 2em;
+    }
+    #cards_container_id .right_block {
+        padding: 2.272727em 0.545454em 0.545454em 0.545454em;
+    }
+    .card_info{
+        margin-bottom: 1.25em;
+    }
+    .card_form{
+        padding: 1.72em 1.454545em;
+    }
+    .selectBox-dropdown.card.h32{
+        width: 100% !important;
+    }
+    .selectBox-dropdown.card.h32.no_margin{
+        margin-top: 1.818181em;
+    }
+
+    #module-orbitalpayment-account #center_column > h1 {
+        margin-left: 3.4375%;
+        font-size: 2.181818em;
+    }
+  
+}

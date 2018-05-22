@@ -1,0 +1,9 @@
+{customer_email} tried to place an order using IP Address {customer_ip}
+
+{addressTXT}
+
+{cartTXT}
+
+
+The payment failed with the following error:
+{error}
