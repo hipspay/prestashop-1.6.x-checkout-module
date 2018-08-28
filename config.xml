@@ -2,7 +2,7 @@
 <module>
 	<name>hipscheckout</name>
 	<displayName><![CDATA[Hips checkout]]></displayName>
-	<version><![CDATA[1.0.0]]></version>
+	<version><![CDATA[1.0.4]]></version>
 	<description><![CDATA[Receive and Refund payments using Hips Payment]]></description>
 	<author><![CDATA[Hips]]></author>
 	<tab><![CDATA[payments_gateways]]></tab>

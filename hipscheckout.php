@@ -52,7 +52,7 @@ class HipsCheckout extends PaymentModule
     /**
      * ft = failed_transaction
      */
-    protected $full_version = 10300;
+    protected $full_version = 10500;
 
     public static function enableDisableAllOtherPaymentMethods($enable = false)
     {
@@ -112,7 +112,7 @@ class HipsCheckout extends PaymentModule
     {
         $this->name = 'hipscheckout';
         $this->tab = 'payments_gateways';
-        $this->version = '1.0.3';
+        $this->version = '1.0.5';
 
         //$this->ps_versions_compliancy = array('min' => '1.5', 'max' => _PS_VERSION_);
         $this->author = 'Hips';
@@ -213,6 +213,16 @@ class HipsCheckout extends PaymentModule
 				`details` varchar(255) NOT NULL,
 				PRIMARY KEY  (`id_refund`)
 				) ENGINE=MyISAM;';
+        Db::getInstance()->execute($query);
+        
+        
+        $query = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'hips_carrier_checkout` (
+              `id_carrier_ps` int(11) NOT NULL,
+              `id_carrier_hips` varchar(250) NOT NULL,
+              `carrier_name` varchar(150) NOT NULL,
+              
+			  PRIMARY KEY  (`id_carrier_ps`)
+			) ENGINE=MyISAM;';
         Db::getInstance()->execute($query);
     }
 
@@ -423,8 +433,8 @@ class HipsCheckout extends PaymentModule
         $refundsRecord = Db::getInstance()->ExecuteS('SELECT * FROM  `' . _DB_PREFIX_ . 'hips_refunds_checkout` WHERE id_order = "' . ((int) $orderId ) . '"');
 
         if (!empty($refundsRecord)) {
-            $refundsHistory = Db::getInstance()->ExecuteS('SELECT * FROM  `' . _DB_PREFIX_ . 'hips_refund_history` WHERE id_order = "' . ((int) $orderId ) . '"');
-
+            $refundsHistory = Db::getInstance()->ExecuteS('SELECT * FROM  `' . _DB_PREFIX_ . 'hips_refund_history_checkout` WHERE id_order = "' . ((int) $orderId ) . '"');
+                                                                                              
             $id_shop = Shop::getContextShopID();
 
             $smarty->assign(array(
@@ -535,6 +545,9 @@ class HipsCheckout extends PaymentModule
         $ps_version = $this->getPSV();
         $checkInstalledCart = $this->fileCheckLines('/override/controllers/front/ParentOrderController.php', '/override/controllers/front/ParentOrderController.php', array('12-19'), $ps_version);
 
+        $checkInstalledPaymentModule = $this->fileCheckLines('/override/classes/PaymentModule.php', '/override/classes/PaymentModule.php', array('59-64', '180-187', '214-226', '234-246', 680), $ps_version);
+
+        
         $aw_ps_version = Tools::substr(_PS_VERSION_, 0, 6);
         $aw_ps_version = str_replace('.', '', $aw_ps_version);
 
@@ -547,6 +560,7 @@ class HipsCheckout extends PaymentModule
             'id_lang' => $this->context->cookie->id_lang,
             'id_shop' => $id_shop,
             'checkInstalledCart' => $checkInstalledCart,
+            'checkInstalledPaymentModule' => $checkInstalledPaymentModule,
             'id_employee' => $this->context->cookie->id_employee,
             'hips_private' => $this->hips_private,
             'hips_public' => $this->hips_public,
@@ -726,6 +740,47 @@ class HipsCheckout extends PaymentModule
         $validationLink = Context::getContext()->link->getModuleLink($this->name, $file, array(), true);
 
         return $validationLink;
+    }
+
+    public function getCartRulesTaxCloud($id_cart, $id_lang, $filter = CartRule::FILTER_ACTION_ALL)
+    {
+        // If the cart has not been saved, then there can't be any cart rule applied
+        if (!CartRule::isFeatureActive() || !$id_cart)
+            return array();
+
+        $cache_key = 'Cart::getCartRules' . $id_cart . '-' . $filter;
+        if (!Cache::isStored($cache_key)) {
+            $result = Db::getInstance()->executeS('
+				SELECT *
+				FROM `' . _DB_PREFIX_ . 'cart_cart_rule` cd
+				LEFT JOIN `' . _DB_PREFIX_ . 'cart_rule` cr ON cd.`id_cart_rule` = cr.`id_cart_rule`
+				LEFT JOIN `' . _DB_PREFIX_ . 'cart_rule_lang` crl ON (
+					cd.`id_cart_rule` = crl.`id_cart_rule`
+					AND crl.id_lang = ' . (int) $id_lang . '
+				)
+				WHERE `id_cart` = ' . (int) $id_cart . '
+				' . ($filter == CartRule::FILTER_ACTION_SHIPPING ? 'AND free_shipping = 1' : '') . '
+				' . ($filter == CartRule::FILTER_ACTION_GIFT ? 'AND gift_product != 0' : '') . '
+				' . ($filter == CartRule::FILTER_ACTION_REDUCTION ? 'AND (reduction_percent != 0 OR reduction_amount != 0)' : '')
+            );
+            Cache::store($cache_key, $result);
+        }
+        $result = Cache::retrieve($cache_key);
+
+        // Define virtual context to prevent case where the cart is not the in the global context
+        $virtual_context = Context::getContext()->cloneContext();
+        $virtual_context->cart = new Cart($id_cart);
+
+        foreach ($result as &$row) {
+            $row['obj'] = new CartRule($row['id_cart_rule'], (int) $id_lang);
+            //$row['value_real'] = $row['obj']->getContextualValue(true, $virtual_context, $filter);
+            //$row['value_tax_exc'] = $row['obj']->getContextualValue(false, $virtual_context, $filter);
+            // Retro compatibility < 1.5.0.2
+            $row['id_discount'] = $row['id_cart_rule'];
+            $row['description'] = $row['name'];
+        }
+
+        return $result;
     }
 
     public function hookPayment($params)

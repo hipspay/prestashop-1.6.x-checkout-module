@@ -49,7 +49,7 @@
             <div class="override_block">
                 <div class="override_class">
                     {l s='Copy' mod='hipscheckout'}<br/>
-                    <span  class="{if $checkInstalledCart['/override/controllers/front/ParentOrderController.php']['file_installed']}file_installed{else}file_not_installed{/if}">/hipscheckout/override_{$aw_ps_version|floatval}/controllers/front/ParentOrderController.php</span>
+                    <span  class="{if $checkInstalledCart['/override/controllers/front/ParentOrderController.php']['file_installed']}file_installed{else}file_not_installed{/if}">/hipscheckout/modified_{$aw_ps_version|floatval}/override/controllers/front/ParentOrderController.php</span>
                     <br/>
                     {l s='to' mod='hipscheckout'}<br/>
                     /override/controllers/front/
@@ -64,6 +64,32 @@
                 </div>
             </div>
            
+                    
+            <div class="override_block">
+                <div class="override_class">
+                    {l s='Copy' mod='hipscheckout'}<br/>
+                    <span  class="{if $checkInstalledPaymentModule['/override/classes/PaymentModule.php']['file_installed']}file_installed{else}file_not_installed{/if}">/hipscheckout/modified_{$aw_ps_version|floatval}/override/classes/PaymentModule.php</span>
+                    <br/>
+                    {l s='to' mod='hipscheckout'}<br/>
+                    /override/classes/
+                </div>
+                <div class="override_lines">
+                    {if $checkInstalledPaymentModule['/override/classes/PaymentModule.php']['file_not_found']}
+                        Lines <span class="{if $checkInstalledPaymentModule['/override/classes/PaymentModule.php']['59-64']}file_installed{else}file_not_installed{/if}">#59-64<span>
+                               , &nbsp;
+                                <span class="{if $checkInstalledPaymentModule['/override/classes/PaymentModule.php']['180-187']}file_installed{else}file_not_installed{/if}">#180-187<span>
+                                        , &nbsp;
+                                <span class="{if $checkInstalledPaymentModule['/override/classes/PaymentModule.php']['214-226']}file_installed{else}file_not_installed{/if}">#214-226<span>
+                                        , &nbsp;
+                                <span class="{if $checkInstalledPaymentModule['/override/classes/PaymentModule.php']['234-246']}file_installed{else}file_not_installed{/if}">#234-246<span>
+                                        , &nbsp;
+                                <span class="{if $checkInstalledPaymentModule['/override/classes/PaymentModule.php']['680']}file_installed{else}file_not_installed{/if}">#680<span>
+                    {else}
+                        {l s='Copy entire file' mod='hipscheckout'}
+                    {/if}                   
+                    
+                </div>
+            </div>
 
             <div class="extra_instructions">
                 <span class="important_alert"> </span>

@@ -29,10 +29,10 @@ $_POST['module'] = 'hipscheckout';
 $controller = new hipscheckoutvalidationModuleFrontController('hipscheckout');
 $hips = new HipsCheckout();
 
-
+$id_cart = Tools::getValue('id_cart');
 
 //if (!$hips->hips_payment_page) {
 //    $controller->run();
 //} else {
-    $controller->postProcess();
+    $controller->postProcessWithoutCart($id_cart);
 //}

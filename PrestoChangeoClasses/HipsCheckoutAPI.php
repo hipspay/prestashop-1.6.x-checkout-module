@@ -292,13 +292,20 @@ class HipsCheckoutAPI
             $json = substr($json, 0, -1);
         }
 
+        $webHook = (Configuration::get('PS_SSL_ENABLED') ? 'https://' : 'http://') . htmlspecialchars($_SERVER['HTTP_HOST'], ENT_COMPAT, 'UTF-8') . __PS_BASE_URI__ . 'modules/hipscheckout/hips-webhook.php?secure_key=' . $post_values['secure_key'].'&id_cart='.$post_values['cart_id'];
+
+        /*
+         * "user_return_url_on_success":"' . $post_values['redirectConformation'] .'id_cart='.$post_values['cart_id'] . '",
+             
+         */
         $json .= '
                 ]
             },
             "require_shipping":' . ($post_values['require_shipping'] ? 'true' : 'true') . ',
             "hooks":{
-             "user_return_url_on_success":"' . $post_values['redirectConformation'] . '",
-             "user_return_url_on_fail":"' . $post_values['redirectFailed'] . '"
+             "user_return_url_on_success":"' . $post_values['redirectConformation'] .'id_cart='.$post_values['cart_id'] . '",
+             "user_return_url_on_fail":"' . $post_values['redirectFailed'] . '",
+             "webhook_url": "' . $webHook . '"
             }
          }';
 
@@ -378,16 +385,27 @@ class HipsCheckoutAPI
                     }' . ($i < count($post_values['cartProducts']) - 1 ? ',' : '' ) . '';
             $i ++;
         }
+        
+        
+        $webHook = (Configuration::get('PS_SSL_ENABLED') ? 'https://' : 'http://') . htmlspecialchars($_SERVER['HTTP_HOST'], ENT_COMPAT, 'UTF-8') . __PS_BASE_URI__ . 'modules/hipscheckout/hips-webhook.php?secure_key=' . $post_values['secure_key'].'&id_cart='.$post_values['cart_id'];
+
+       
+        
+       /*
+        * "user_return_url_on_success":"' . $post_values['redirectConformation'] .'?id_cart='.$post_values['cart_id'] . '",
+        */
+             
         $json .= '
                 ]
             },
             "checkout_settings": {
                 "extended_cart": true
             },
-            "require_shipping":' . ($post_values['require_shipping'] ? 'true' : 'true') . ',
-            "hooks":{
-             "user_return_url_on_success":"' . $post_values['redirectConformation'] . '",
-             "user_return_url_on_fail":"' . $post_values['redirectFailed'] . '"
+            "require_shipping":' . ($post_values['require_shipping'] ? 'true' : 'false') . ',
+            "hooks":{      
+             "user_return_url_on_success":"' . $post_values['redirectConformation'] .'?id_cart='.$post_values['cart_id'] . '",
+             "user_return_url_on_fail":"' . $post_values['redirectFailed'] . '",
+             "webhook_url":"' . $webHook . '"
             },
             "fulfill":' . ($post_values['capture'] ? 'true' : 'false') . '
          }';
